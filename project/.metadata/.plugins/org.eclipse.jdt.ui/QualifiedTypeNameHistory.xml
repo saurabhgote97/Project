@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.app.dao.IInstitutePersonDao"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="com.app.pojos.StudentHistory"/>
+<fullyQualifiedTypeName name="com.app.dao.IStudentDao"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.app.pojos.InstitutePerson"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+<fullyQualifiedTypeName name="com.app.pojos.QuestionDatabase"/>
+<fullyQualifiedTypeName name="antlr.collections.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,68 @@
+package com.app.dao;
+import java.util.List;
+import java.util.Set;
+
+import javax.mail.search.IntegerComparisonTerm;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.app.controller.InstutitePersonController;
+import com.app.pojos.*;
+
+@Repository
+@Transactional
+public class StudentDao implements IStudentDao
+{
+	@Autowired
+	private SessionFactory sf;
+	/////////////////////////////////////////////////////////////////////////
+	
+	@Override
+	public Integer registerStudent(Student details) {
+		return (Integer) sf.getCurrentSession().save(details);
+	}
+	
+	/////////////////////////////////////////////////////////////////////////
+	@Override
+	public 	List<Test> getAllTestById() {
+		int id =1; 
+		String jpql="select p from InstitutePerson p join fetch p.testList where p.id = :id";
+		InstitutePerson ip = sf.getCurrentSession().createQuery(jpql,InstitutePerson.class).setParameter("id", id).getSingleResult();
+		System.out.println("Ip ==> "+ip);
+		System.out.println("Ip ==> "+ip.getTestList());
+		List<Test> list = ip.getTestList();
+		return list;
+	}
+
+	@Override
+	public Set<Test> studentTestList(int sid) { 
+		String jpql="select s from Student s join fetch s.tests where s.id = :id";
+		Student ip = sf.getCurrentSession().createQuery(jpql,Student.class).setParameter("id", sid).getSingleResult();
+		System.out.println("Ip ==> "+ip);
+		System.out.println("Ip ==> "+ip.getTests());
+		Set<Test> list = ip.getTests();
+		return list;
+	}
+
+	@Override
+	public Set<QuestionDatabase> getQuestionList(int id) { 
+		String jpql="select t from Test t join fetch t.questions where t.id = :id";
+		Test ip = sf.getCurrentSession().createQuery(jpql,Test.class).setParameter("id", id).getSingleResult();
+		System.out.println("Ip ==> "+ip);
+		System.out.println("Ip ==> "+ip.getQuestions());
+		Set<QuestionDatabase> list = ip.getQuestions();
+		return list;
+	}
+
+	@Override
+	public insertStudentHistory(StudentHistory sh,int id) {
+		Student s = sf.getCurrentSession().get(Student.class, id);
+		sf.getCurrentSession().save(sh );
+		s.addStudentHistory(sh);
+		return sf.getCurrentSession().save(sh);
+	}
+
+}

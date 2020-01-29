@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.app.dao.IInstitutePerson&apos; to &apos;IInstitutePersonDao&apos;&#x0A;- Original project: &apos;COnlineExaminationSystemProject2&apos;&#x0A;- Original element: &apos;com.app.dao.IInstitutePerson&apos;&#x0A;- Renamed element: &apos;com.app.dao.IInstitutePersonDao&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;IInstitutePerson&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.app.dao{IInstitutePerson.java[IInstitutePerson" matchStrategy="1" name="IInstitutePersonDao" qualified="false" references="true" similarDeclarations="false" stamp="1579853515131" textual="false" version="1.0"/>
+</session>
